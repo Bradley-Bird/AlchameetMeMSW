@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     container: node:latest
     steps:
-    - uses: actions/checkout@v2
-    - run: yarn install
-    - run: yarn test
-      env:
-        CI: true
-        REACT_APP_SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
-        REACT_APP_SUPABASE_KEY: ${{ secrets.REACT_APP_SUPABASE_KEY }}
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - run: npm test
+        env:
+          CI: true
+          REACT_APP_SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
+          REACT_APP_SUPABASE_KEY: ${{ secrets.REACT_APP_SUPABASE_KEY }}
